@@ -1,0 +1,40 @@
+{
+  "name": "stablecoin-mint",
+  "version": "1.0.0",
+  "description": "Privacy-preserving stablecoin with FHE encryption",
+  "private": true,
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test --network fhevm",
+    "test:basic": "hardhat test test/StablecoinMint.test.js --network fhevm",
+    "test:transfer": "hardhat test test/Transfer.test.js --network fhevm",
+    "test:owner": "hardhat test test/OwnerActions.test.js --network fhevm",
+    "test:fhe": "hardhat test test/FHEOperations.test.js --network fhevm",
+    "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build:frontend": "cd frontend && npm run build"
+  },
+  "keywords": [
+    "fhe",
+    "zama",
+    "stablecoin",
+    "privacy",
+    "blockchain"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@fhevm/hardhat-plugin": "^0.3.0-1",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.0",
+    "@typechain/hardhat": "^9.1.0",
+    "hardhat": "^2.26.3",
+    "dotenv": "^16.4.5"
+  },
+  "dependencies": {
+    "@fhevm/solidity": "^0.9.1",
+    "@zama-fhe/relayer-sdk": "^0.3.0-5",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.4"
+  }
+}
